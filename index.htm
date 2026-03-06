@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetchie's Tailoring</title>
+    <link rel="icon" type="image/x-icon" href="download.ico">
+</head>
+<body style="background-color:powderblue; font-family:Comic Sans MS, cursive, Arial;">
+
+<!-- Header -->
+<header style="text-align:center; padding:20px;">
+    <h1 style="color:blue; margin:5px 0;">Tetchie's Tailoring</h1>
+    <h2 style="color:purple; margin:5px 0;">Quality Tailoring, Happy Customers!</h2>
+</header>
+
+<!-- Tabs -->
+<div style="overflow:hidden; background-color:#6A5ACD;">
+  <button style="background-color:#6A5ACD; color:white; border:1px solid white; padding:10px 15px; cursor:pointer; float:left;" onclick="openTab(event,'Login')" id="defaultOpen">Login</button>
+  <button style="background-color:#6A5ACD; color:white; border:1px solid white; padding:10px 15px; cursor:pointer; float:left;" onclick="openTab(event,'Info')">Info & Order</button>
+</div>
+
+<!-- Login Tab -->
+<div id="Login" style="display:none; background-color:white; padding:15px; margin:10px; border:2px solid #6A5ACD;">
+    <h2 style="color:#4B0082;">Login</h2>
+    <form onsubmit="event.preventDefault(); openTab(event, 'Info');">
+        <label>Username:</label>
+        <input type="text" placeholder="Enter username" style="width:100%; padding:5px; margin:5px 0 10px 0;" required>
+        <label>Password:</label>
+        <input type="password" placeholder="Enter password" style="width:100%; padding:5px; margin:5px 0 10px 0;" required>
+        <button type="submit" style="background-color:blue; color:white; padding:7px; border:none; cursor:pointer;">Login</button>
+    </form>
+</div>
+
+<!-- Info + Order Tab -->
+<div id="Info" style="display:none; background-color:white; padding:15px; margin:10px; border:2px solid #6A5ACD;">
+    <h2 style="color:#4B0082;">About Tetchie's Tailoring</h2>
+   <p>Are you looking for someone who can sew your clothes or repair your damaged garments with care?</p>
+<p>Whether it's a loose seam, zipper that won't budge, or a dream outfit you want to bring to life, dito kana!</p>
+
+    <h3>Services</h3>
+    <ul>
+        <li>Clothes Minor Alteration</li>
+        <li>Clothes Major Alteration</li>
+        <li>Dress Making</li>
+        <li>Student Uniform</li>
+        <li>Teacher's Uniform</li>
+        <li>Pants</li>
+        <li>Barong Long Sleeve</li>
+        <li>Barong Short Sleeve</li>
+        <li>Bed Sheets</li>
+        <li>Pillow Cases</li>
+        <li>Curtains</li>
+        <li>Costumes</li>
+        <li>Other clothes requested by the customer</li>
+    </ul>
+
+    <h3>Cost of Labor</h3>
+    <ul>
+        <li>Clothes Minor Alteration — 50 pesos</li>
+        <li>Clothes Major Alteration — 150 pesos</li>
+        <li>Dress Making — 400 pesos</li>
+        <li>Student Uniform — 500-600 pesos per set</li>
+        <li>Teacher's Uniform — 800 pesos per set</li>
+        <li>Pants — 400 pesos</li>
+        <li>Barong Long Sleeve — 500 pesos</li>
+        <li>Barong Short Sleeve — 350 pesos</li>
+        <li>Bed Sheets — 150 pesos each</li>
+        <li>Pillow Cases — 35 pesos each</li>
+        <li>Curtains — 50-75 pesos each</li>
+        <li>Costumes — price may vary</li>
+        <li>Other requests — price may vary</li>
+    </ul>
+
+    <p style="background-color:#fff3cd; padding:5px; border-left:4px solid #ffc107;">Note: Price is for labor only. Fabric cost not included. Total price may vary.</p>
+
+    <h3>Sample Computation</h3>
+    <p>Product: Polo Barong Short Sleeve — Fabric 200 pesos</p>
+    <p>Labor: 350 pesos</p>
+
+    <h2 style="color:#4B0082;">Order & Inquiry Form</h2>
+    <form action="mailto:angelajosstabago@gmail.com" method="POST" enctype="text/plain">
+        <label>Full Name:</label>
+        <input type="text" name="Name" placeholder="Enter your name" style="width:100%; padding:5px; margin:5px 0 10px 0;" required>
+        <label>Address:</label>
+        <input type="text" name="Address" placeholder="Enter your Full Address" style="width:100%; padding:5px; margin:5px 0 10px 0;" required>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="Gender" value="Male"> Male
+        <input type="radio" name="Gender" value="Female"> Female<br><br>
+
+        <label>What would you like to order:</label>
+        <select name="Order_Type" style="width:100%; padding:5px; margin:5px 0 10px 0;">
+            <option>Clothes Minor Alteration</option>
+            <option>Clothes Major Alteration</option>
+            <option>Dress Making</option>
+            <option>Student Uniform</option>
+            <option>Teacher's Uniform</option>
+            <option>Pants</option>
+            <option>Barong Long Sleeve</option>
+            <option>Barong Short Sleeve</option>
+            <option>Other</option>
+        </select>
+
+        <label>Other Requests:</label>
+        <textarea name="Order_Details" rows="2" placeholder="List order details..." style="width:100%; padding:5px; margin:5px 0 10px 0;" required></textarea>
+
+        <label>Comments / Inquiries:</label>
+        <textarea name="Comments" rows="4" placeholder="Write your questions..." style="width:100%; padding:5px; margin:5px 0 10px 0;"></textarea>
+
+        <input type="submit" value="Submit Order Request" style="background-color:blue; color:white; padding:7px; border:none; cursor:pointer;">
+    </form>
+
+    <a href="https://www.facebook.com/share/1DNeVr3tW2/" target="_blank">Visit For More Details.</a>
+</div>
+
+<script>
+function openTab(evt, tabName){
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByTagName('div');
+    for(i=0;i<tabcontent.length;i++){
+        if(tabcontent[i].id=="Login" || tabcontent[i].id=="Info") tabcontent[i].style.display="none";
+    }
+    tablinks = document.getElementsByTagName('button');
+    for(i=0;i<tablinks.length;i++){
+        tablinks[i].className = tablinks[i].className.replace(" active","");
+    }
+    document.getElementById(tabName).style.display="block";
+    evt.currentTarget.className += " active";
+}
+// Open default tab
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
